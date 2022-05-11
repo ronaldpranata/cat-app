@@ -16,6 +16,10 @@
 ![alt text](https://raw.githubusercontent.com/ronaldpranata/cat-app/master/screenshots/catlist.png)
 ![alt text](https://raw.githubusercontent.com/ronaldpranata/cat-app/master/screenshots/catdetail.png)
 
+## Design Pattern : State Management Pattern
+
+![alt text](https://vuex.vuejs.org/vuex.png)
+
 
 ## How to run 
 
