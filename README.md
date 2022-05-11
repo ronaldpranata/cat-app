@@ -13,7 +13,7 @@
 
 
 ## Screenshots
-
+![alt text](https://github.com/ronaldpranata/cat-app/screenshots/image.jpg?raw=true)
 
 ## How to run 
 
