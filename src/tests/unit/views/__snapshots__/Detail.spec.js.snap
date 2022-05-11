@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Detail renders properly 1`] = `
+<div class="detail">
+  <div class="cat"><a class="bold clickable">« back</a><br>
+    <h1>catDetail undefined</h1><img class="cat-image">
+    <table>
+      <tr>
+        <td class="bold">description</td>
+        <td class="detail"></td>
+      </tr>
+      <tr>
+        <td class="bold">maximumWeight</td>
+        <td class="detail"></td>
+      </tr>
+      <tr>
+        <td class="bold">averageLifespan</td>
+        <td class="detail"></td>
+      </tr>
+      <tr>
+        <td class="bold">origin</td>
+        <td class="detail">
+          <!--v-if-->
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+`;

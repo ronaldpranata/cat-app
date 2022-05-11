@@ -1,5 +1,5 @@
 export default () => ({
-  catList: [],
-  catDetail: {},
+  catDetail: null,
   catBreeds: [],
+  catOriginMap: null,
 });

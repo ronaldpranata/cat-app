@@ -5,6 +5,7 @@ const headers = {
   'Content-Type': 'application/json',
   'x-api-key': process.env.VUE_APP_APIKey,
 };
+const googleMapUrl = process.env.VUE_APP_GMAP_URL;
 
 export default {
   async getBreeds(params) {
@@ -14,11 +15,10 @@ export default {
     };
     return axios.get(`${origin}/breeds`, config);
   },
-  async getCatImages(params) {
+  async getMapLocation(params) {
     const config = {
-      headers,
       params,
     };
-    return axios.get(`${origin}/images/search`, config);
+    return axios.get(`${googleMapUrl}`, config);
   },
 };

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders properly 1`] = `
+<div class="header">
+  <div id="nav"><span><router-link to="/">home</router-link> <span>|</span></span><span><router-link to="/about">about</router-link> <!--v-if--></span></div><img alt="Vue logo" src="">
+</div>
+<router-view></router-view>
+<div id="footer">copyright</div>
+`;

@@ -2,5 +2,13 @@
   "message": "Accredify Cats",
   "home":"Home",
   "about":"About",
-  "copyright":"Copyright by Ronald Pranata Kurniawan 2022"
+  "copyright":"Copyright by Ronald Pranata Kurniawan 2022",
+  "name":"Name",
+  "image":"Image",
+  "catDetail":"Cat Detail of : ",
+  "description":"Description",
+  "maximumWeight":"Maximum Weight",
+  "averageLifespan":"Average Lifespan",
+  "origin":"Origin"
+
 }

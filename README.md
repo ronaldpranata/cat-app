@@ -1,4 +1,21 @@
-# Accredify-Vue-Boilerplate
+# Accredify Cats
+
+## Folder Setup
+- __mock__ - contain file of the mock data for unit test
+- api - contain API function to call cat API using axios
+- assets - contain all the assets
+- components - contain all the components
+- locales - contain static text translation
+- router - contain routing
+- store - contain state management code
+- tests - contain all the unit test code
+- views - contain all the page
+
+
+## Screenshots
+
+
+## How to run 
 
 ### Local project setup
 ```

@@ -1,17 +1,14 @@
-import deepClone from 'deep-clone';
-import * as _ from 'lodash';
-
 export default {
   getCatBreedColumn() {
-    return ['', 'name'];
+    return ['Image', 'Name'];
   },
   getCatBreed(state) {
-    return deepClone(state.catBreeds);
-  },
-  getCatList(state) {
-    return deepClone(state.catList);
+    return state.catBreeds;
   },
   getCatDetail(state) {
-    return deepClone(state.catDetail);
+    return state.catDetail;
+  },
+  getOriginMap(state) {
+    return state.catOriginMap;
   },
 };

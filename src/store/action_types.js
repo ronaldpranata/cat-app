@@ -1,2 +1,4 @@
 export const GET_CAT_BREEDS = 'GET_CAT_BREEDS';
-export const GET_CAT_LIST = 'GET_CAT_LIST';
+export const GET_ORIGIN_LOCATION = 'GET_ORIGIN_LOCATION';
+export const GET_CAT_IMAGES = 'GET_CAT_IMAGES';
+export const SET_CAT_DETAIL = 'SET_CAT_DETAIL';

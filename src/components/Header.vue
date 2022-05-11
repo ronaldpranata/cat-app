@@ -1,9 +1,12 @@
 <template>
+  <div class="header">
     <div id="nav">
         <span v-for="(item,index) in links" :key="index">
             <router-link  :to="item.url">{{ t(item.name) }} </router-link> <span v-if="index!=(links.length-1)">|</span>
         </span>
     </div>
+    <img alt="Vue logo" src="../assets/logo.png" />
+  </div>
 </template>
 
 <script>
