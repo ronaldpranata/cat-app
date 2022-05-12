@@ -3,13 +3,13 @@
 exports[`CatTable renders properly 1`] = `
 <div class="table" header="test,test">
   <div class="row header"></div>
-  <div class="row body clickable">
-    <div class="column"><span><img src="image" width="60"></span></div>
-    <div class="column"><span>cat1</span></div>
+  <div class="row body clickable" id="cat1">
+    <div class="column"><span class="image"><img src="image" width="60"></span></div>
+    <div class="column"><span class="name">cat1</span></div>
   </div>
-  <div class="row body clickable">
-    <div class="column"><span><img src="image2" width="60"></span></div>
-    <div class="column"><span>cat2</span></div>
+  <div class="row body clickable" id="cat2">
+    <div class="column"><span class="image"><img src="image2" width="60"></span></div>
+    <div class="column"><span class="name">cat2</span></div>
   </div>
 </div>
 `;

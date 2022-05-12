@@ -2,25 +2,25 @@
 
 exports[`CatDetail renders properly 1`] = `
 <div class="cat"><a class="bold clickable">« back</a><br>
-  <h1>catDetail catName</h1><img src="imgurl" class="cat-image">
+  <h1 class="title">catDetail catName</h1><img src="imgurl" class="cat-image">
   <table>
     <tr>
       <td class="bold">description</td>
-      <td class="detail">catdescription</td>
+      <td class="detail description">catdescription</td>
     </tr>
     <tr>
       <td class="bold">maximumWeight</td>
-      <td class="detail">
+      <td class="detail weight">
         <div>test : test</div>
       </td>
     </tr>
     <tr>
       <td class="bold">averageLifespan</td>
-      <td class="detail">3-4</td>
+      <td class="detail life-span">3-4</td>
     </tr>
     <tr>
       <td class="bold">origin</td>
-      <td class="detail">
+      <td class="detail gmap">
         <!--v-if-->
       </td>
     </tr>

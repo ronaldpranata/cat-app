@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1652272460758" clover="3.2.0">
-  <project timestamp="1652272460758" name="All files">
+<coverage generated="1652316699836" clover="3.2.0">
+  <project timestamp="1652316699836" name="All files">
     <metrics statements="92" coveredstatements="65" conditionals="16" coveredconditionals="4" methods="35" coveredmethods="24" elements="143" coveredelements="93" complexity="0" loc="92" ncloc="92" packages="7" files="16" classes="16"/>
     <package name="src">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -48,12 +48,12 @@
       </file>
       <file name="CatTable.vue" path="C:\Personal project\accredify\Dev-Interview\front-end\boilerplate\src\components\CatTable.vue">
         <metrics statements="6" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="27" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
-        <line num="30" count="2" type="stmt"/>
-        <line num="37" count="5" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
         <line num="38" count="5" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <line num="39" count="5" type="stmt"/>
+        <line num="43" count="0" type="stmt"/>
       </file>
       <file name="Footer.vue" path="C:\Personal project\accredify\Dev-Interview\front-end\boilerplate\src\components\Footer.vue">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

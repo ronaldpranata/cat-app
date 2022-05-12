@@ -77,18 +77,18 @@ BRH:3
 end_of_record
 TN:
 SF:C:\Personal project\accredify\Dev-Interview\front-end\boilerplate\src\components\CatTable.vue
-FN:36,(anonymous_0)
-FN:41,(anonymous_1)
+FN:37,(anonymous_0)
+FN:42,(anonymous_1)
 FNF:2
 FNH:1
 FNDA:5,(anonymous_0)
 FNDA:0,(anonymous_1)
-DA:27,2
 DA:28,2
-DA:30,2
-DA:37,5
+DA:29,2
+DA:31,2
 DA:38,5
-DA:42,0
+DA:39,5
+DA:43,0
 LF:6
 LH:5
 BRF:0
