@@ -13,6 +13,9 @@
 // @ is an alias to /src
 import * as _ from 'lodash';
 import { useI18n } from 'vue-i18n';
+import { computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
 import CatTable from '@/components/CatTable.vue';
 import { GET_CAT_BREEDS, SET_CAT_DETAIL } from '@/store/action_types';
 
@@ -23,45 +26,40 @@ export default {
   },
   setup() {
     const { t } = useI18n();
-    return { t };
-  },
-  data() {
-    return {
-      links: [
-        {
-          url: '/',
-          name: 'home',
-        },
-        {
-          url: '/about',
-          name: 'about',
-        },
-      ],
-    };
-  },
-  computed: {
-    tableHeader() {
-      return this.$store.getters.getCatBreedColumn;
-    },
-    tableBody() {
-      return _.map(this.$store.getters.getCatBreed, (o) => ({
-        image: o?.image?.url,
-        name: o.name,
-      }));
-    },
-  },
-  methods: {
-    async gotoDetail(name) {
+    const store = useStore();
+    const router = useRouter();
+    const links = [
+      {
+        url: '/',
+        name: 'home',
+      },
+      {
+        url: '/about',
+        name: 'about',
+      },
+    ];
+    const tableHeader = computed(() => store.getters.getCatBreedColumn);
+    const tableBody = computed(() => _.map(store.getters.getCatBreed, (o) => ({
+      image: o?.image?.url,
+      name: o.name,
+    })));
+
+    async function gotoDetail(name) {
       const filterCat = _.find(
-        this.$store.getters.getCatBreed,
+        store.getters.getCatBreed,
         (o) => o.name === name,
       );
-      await this.$store.dispatch(SET_CAT_DETAIL, filterCat);
-      await this.$router.push({ path: '/catDetail' });
-    },
-  },
-  async created() {
-    await this.$store.dispatch(GET_CAT_BREEDS);
+      await store.dispatch(SET_CAT_DETAIL, filterCat);
+      await router.push({ path: '/catDetail' });
+    }
+
+    onMounted(async () => {
+      await store.dispatch(GET_CAT_BREEDS);
+    });
+
+    return {
+      t, tableHeader, tableBody, links, gotoDetail,
+    };
   },
 };
 </script>

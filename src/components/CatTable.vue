@@ -34,14 +34,12 @@ export default defineComponent({
     headers: Array,
     body: Array,
   },
-  setup() {
+  setup(props, { emit }) {
     const { t } = useI18n();
-    return { t };
-  },
-  methods: {
-    gotoDetail(name) {
-      this.$emit('gotoDetail', name);
-    },
+    function gotoDetail(name) {
+      emit('gotoDetail', name);
+    }
+    return { t, gotoDetail };
   },
 });
 </script>

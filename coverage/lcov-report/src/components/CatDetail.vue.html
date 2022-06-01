@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>12/14</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">16.67% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>1/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>3/6</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.89% </span>
+                <span class="strong">91.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>11/12</span>
             </div>
         
             
@@ -139,11 +139,7 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a>
-<a name='L85'></a><a href='#L85'>85</a>
-<a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,30 +181,26 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -257,7 +249,7 @@
         &lt;td class="bold"&gt;{{ t('origin') }}&lt;/td&gt;
         &lt;td class="detail gmap"&gt;
           &lt;GMapMap :center="center" v-if="center" :zoom="3" map-type-id="terrain" style="width: 500px; height: 300px"&gt;
-            &lt;GMapCluster v-if="markers.length&gt;0"&gt;
+            &lt;GMapCluster v-if="markers.length &gt; 0"&gt;
               &lt;GMapMarker :key="index" v-for="(m, index) in markers" :position="m.position" :clickable="true"
                 :draggable="true" @click="center = m.position" /&gt;
             &lt;/GMapCluster&gt;
@@ -269,33 +261,29 @@
 &lt;/template&gt;
 &nbsp;
 &lt;script&gt;
-import { defineComponent } from 'vue';
+import { defineComponent, computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 import { useI18n } from 'vue-i18n';
 import { GET_ORIGIN_LOCATION } from '@/store/action_types';
 &nbsp;
 export default defineComponent({
   name: 'CatDetail',
-  computed: {
-    center() {
-<span class="branch-1 cbranch-no" title="branch not covered" >      return this.$store.getters.getOriginMap?.results[0]?.geometry?.location;</span>
-    },
-<span class="fstat-no" title="function not covered" >    markers(</span>) {
-<span class="cstat-no" title="statement not covered" >      return [</span>
-        {
-          position: this.center,
-        },
-      ];
-    },
-  },
   props: {
     cat: Object,
   },
-  setup() {
+  setup(props) {
     const { t } = useI18n();
-    return { t };
-  },
-  async created() {
-    await this.$store.dispatch(GET_ORIGIN_LOCATION, { address: this.cat.origin });
+    const store = useStore();
+    const center = computed(<span class="branch-1 cbranch-no" title="branch not covered" >() =&gt; s</span>tore.getters.getOriginMap?.results[0]?.geometry?.location);
+    const markers = computed(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >[</span></span>
+      {
+        position: center.value,
+      },
+    ]);
+    onMounted(<span class="fstat-no" title="function not covered" >async () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      await s</span>tore.dispatch(GET_ORIGIN_LOCATION, { address: props.cat.origin });
+    });
+    return { t, center, markers };
   },
 });
 &lt;/script&gt;
@@ -324,7 +312,7 @@ export default defineComponent({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu May 12 2022 08:51:39 GMT+0800 (Singapore Standard Time)
+                at Wed Jun 01 2022 19:24:13 GMT+0800 (Singapore Standard Time)
             </div>
         </div>
         <script src="..\..\prettify.js"></script>

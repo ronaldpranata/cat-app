@@ -25,7 +25,7 @@
         <td class="bold">{{ t('origin') }}</td>
         <td class="detail gmap">
           <GMapMap :center="center" v-if="center" :zoom="3" map-type-id="terrain" style="width: 500px; height: 300px">
-            <GMapCluster v-if="markers.length>0">
+            <GMapCluster v-if="markers.length > 0">
               <GMapMarker :key="index" v-for="(m, index) in markers" :position="m.position" :clickable="true"
                 :draggable="true" @click="center = m.position" />
             </GMapCluster>
@@ -37,33 +37,29 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, computed, onMounted } from 'vue';
+import { useStore } from 'vuex';
 import { useI18n } from 'vue-i18n';
 import { GET_ORIGIN_LOCATION } from '@/store/action_types';
 
 export default defineComponent({
   name: 'CatDetail',
-  computed: {
-    center() {
-      return this.$store.getters.getOriginMap?.results[0]?.geometry?.location;
-    },
-    markers() {
-      return [
-        {
-          position: this.center,
-        },
-      ];
-    },
-  },
   props: {
     cat: Object,
   },
-  setup() {
+  setup(props) {
     const { t } = useI18n();
-    return { t };
-  },
-  async created() {
-    await this.$store.dispatch(GET_ORIGIN_LOCATION, { address: this.cat.origin });
+    const store = useStore();
+    const center = computed(() => store.getters.getOriginMap?.results[0]?.geometry?.location);
+    const markers = computed(() => [
+      {
+        position: center.value,
+      },
+    ]);
+    onMounted(async () => {
+      await store.dispatch(GET_ORIGIN_LOCATION, { address: props.cat.origin });
+    });
+    return { t, center, markers };
   },
 });
 </script>

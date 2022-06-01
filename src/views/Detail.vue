@@ -6,6 +6,9 @@
 
 <script>
 import { useI18n } from 'vue-i18n';
+import { useStore } from 'vuex';
+import { useRouter } from 'vue-router';
+import { computed, onMounted } from 'vue';
 import CatDetail from '@/components/CatDetail.vue';
 
 export default {
@@ -15,17 +18,16 @@ export default {
   },
   setup() {
     const { t } = useI18n();
-    return { t };
+    const store = useStore();
+    const router = useRouter();
+    const catDetail = computed(() => store.getters.getCatDetail);
+    onMounted(() => {
+      if (!catDetail.value) {
+        router.push({ path: '/' });
+      }
+    });
+    return { t, catDetail };
   },
-  computed: {
-    catDetail() {
-      return this.$store.getters.getCatDetail;
-    },
-  },
-  async mounted() {
-    if (!this.catDetail) {
-      this.$router.push({ path: '/' });
-    }
-  },
+
 };
 </script>
