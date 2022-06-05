@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Vuex from 'vuex';
+import { createStore } from 'vuex';
 import Detail from '@/views/Detail.vue';
 import CatDetail from '@/components/CatDetail.vue';
 import mockCatBreeds from '@/__mock__/mock';
@@ -28,7 +28,7 @@ const actions = {
     }
   },
 };
-const store = new Vuex.Store({
+const store = createStore({
   state,
   actions,
   mutations,
@@ -37,9 +37,9 @@ const store = new Vuex.Store({
 
 const factory = () => mount(Detail, {
   global: {
-    plugins: [i18n, Vuex],
-    mocks: {
-      $store: store,
+    plugins: [i18n],
+    provide: {
+      store,
     },
   },
 });

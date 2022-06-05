@@ -2,6 +2,7 @@
 
 exports[`Detail renders properly 1`] = `
 <div class="detail">
+  <!--v-if-->
   <div class="cat"><a class="bold clickable">« back</a><br>
     <h1 class="title">catDetail undefined</h1><img class="cat-image">
     <table>

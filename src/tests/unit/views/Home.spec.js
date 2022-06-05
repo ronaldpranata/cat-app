@@ -2,7 +2,7 @@ import { mount } from '@vue/test-utils';
 import { createStore } from 'vuex';
 import Home from '@/views/Home.vue';
 import CatTable from '@/components/CatTable.vue';
-import mockCatBreeds from '@/__mock__/mock';
+import mock from '@/__mock__/mock';
 import { createI18n } from 'vue-i18n';
 import state from '@/store/state';
 import mutations from '@/store/mutations';
@@ -19,7 +19,7 @@ const actions = {
   async [GET_CAT_BREEDS]({ commit }) {
     try {
       const response = await new Promise((resolve) => {
-        resolve(mockCatBreeds);
+        resolve(mock.mockCatBreeds);
       });
       commit('SET_CAT_BREEDS', response?.data);
       return response?.data;
@@ -37,7 +37,10 @@ const store = createStore({
 
 const factory = () => mount(Home, {
   global: {
-    plugins: [i18n, store],
+    plugins: [i18n],
+    provide: {
+      store,
+    },
   },
 });
 
