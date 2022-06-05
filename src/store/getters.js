@@ -5,9 +5,6 @@ export default {
   getCatBreed(state) {
     return state.catBreeds;
   },
-  getCatDetail(state) {
-    return state.catDetail;
-  },
   getOriginMap(state) {
     return state.catOriginMap;
   },

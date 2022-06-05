@@ -57,7 +57,9 @@ export default defineComponent({
       },
     ]);
     onMounted(async () => {
-      await store.dispatch(GET_ORIGIN_LOCATION, { address: props.cat.origin });
+      if (props.cat?.origin) {
+        await store.dispatch(GET_ORIGIN_LOCATION, { address: props.cat.origin });
+      }
     });
     return { t, center, markers };
   },
