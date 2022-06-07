@@ -5,7 +5,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import { ref } from 'vue';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
 
@@ -15,18 +15,19 @@ export default {
     Header,
     Footer,
   },
-  data() {
+  setup() {
+    const links = ref([
+      {
+        url: '/',
+        name: 'home',
+      },
+      {
+        url: '/about',
+        name: 'about',
+      },
+    ]);
     return {
-      links: [
-        {
-          url: '/',
-          name: 'home',
-        },
-        {
-          url: '/about',
-          name: 'about',
-        },
-      ],
+      links,
     };
   },
 };
