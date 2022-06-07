@@ -10,7 +10,7 @@ export default function useCatBreed() {
   onMounted(async () => {
     try {
       loading.value = true;
-      await store.dispatch(GET_CAT_BREEDS);
+      if (cats.value.length === 0) await store.dispatch(GET_CAT_BREEDS);
       loading.value = false;
     } catch (errorMessage) {
       loading.value = false;

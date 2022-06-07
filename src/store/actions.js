@@ -7,11 +7,10 @@ import {
 const googleKey = process.env.VUE_APP_GMAP_KEY;
 
 export default {
-  async [GET_CAT_BREEDS]({ commit, getters }, params) {
+  async [GET_CAT_BREEDS]({ commit }, params) {
     try {
-      const haveData = getters.getCatBreed.length > 0;
-      const response = haveData ? getters.getCatBreed : await API.getBreeds(params);
-      const result = haveData ? response : response?.data;
+      const response = await API.getBreeds(params);
+      const result = response?.data;
       commit('SET_CAT_BREEDS', result);
       return result;
     } catch (error) {
