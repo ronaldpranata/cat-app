@@ -28,10 +28,9 @@ export default {
   },
   setup() {
     const { t } = useI18n();
-
     const router = useRouter();
     const { cats, loading, error } = useCatBreed();
-    const tableHeader = ['Image', 'Name'];
+    const tableHeader = [t('image'), t('name')];
     const tableBody = computed(() => _.map(cats.value, (o) => ({
       image: o?.image?.url,
       name: o?.name,
