@@ -6,8 +6,8 @@ exports[`Home renders properly 1`] = `
   <!--v-if-->
   <div class="table">
     <div class="row header">
-      <div class="column">Image</div>
-      <div class="column">Name</div>
+      <div class="column">image</div>
+      <div class="column">name</div>
     </div>
   </div>
 </div>
