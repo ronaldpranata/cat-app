@@ -17,7 +17,6 @@
 import * as _ from 'lodash';
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
-import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import CatTable from '@/components/CatTable.vue';
 import useCatBreed from '@/composables/useCatBreed';
@@ -29,10 +28,10 @@ export default {
   },
   setup() {
     const { t } = useI18n();
-    const store = useStore();
+
     const router = useRouter();
     const { cats, loading, error } = useCatBreed();
-    const tableHeader = computed(() => store.getters.getCatBreedColumn);
+    const tableHeader = ['Image', 'Name'];
     const tableBody = computed(() => _.map(cats.value, (o) => ({
       image: o?.image?.url,
       name: o?.name,
